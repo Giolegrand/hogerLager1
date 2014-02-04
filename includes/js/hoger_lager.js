@@ -10,7 +10,7 @@ var canvas;
 /* inzet[1] = all-in          */
 /* inzet[2] = inzet verlagen  */
 /******************************/
-var inzet = document.getElementsByClassName('inzet');
+var inzet = document.getElementById('inzet');
 /******************************/
 /* Buttons verkrijgen         */
 /* button[0] = computer gooien*/
@@ -111,7 +111,7 @@ function tekenSpeelveld()
 
 function tekenScoreComputer()
 {
-    canvas.clearRect(90,154,20,30);
+    canvas.clearRect(90,154,40,30);
     canvas.fillStyle = "black";
     canvas.font = "30px Arial"
     if(computerTotaal > 0)
@@ -122,7 +122,7 @@ function tekenScoreComputer()
 
 function tekenScoreSpeler()
 {
-    canvas.clearRect(710,154,20,30);
+    canvas.clearRect(710,154,40,30);
     canvas.fillStyle = "black";
     canvas.font = "30px Arial"
     if(spelerTotaal > 0)
@@ -169,7 +169,7 @@ function reageerKlikOpComputer()
             case 2:
                 canvas.beginPath();
                 canvas.arc(70,70,10,0,2*Math.PI); //links boven 1e dobbelsteen
-
+                canvas.moveTo(130,130);
                 canvas.arc(130,130,10,0,2*Math.PI); //rechts onder 1e dobbelsteen
                 canvas.closePath();
 
@@ -179,7 +179,9 @@ function reageerKlikOpComputer()
             case 3:
                 canvas.beginPath();
                 canvas.arc(70,70,10,0,2*Math.PI); //links boven 1e dobbelsteen
+                canvas.moveTo(100,100);
                 canvas.arc(100,100,10,0,2*Math.PI); //middelste stip 1e dobbelsteen
+                canvas.moveTo(130,130);
                 canvas.arc(130,130,10,0,2*Math.PI); //rechts onder 1e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -188,8 +190,11 @@ function reageerKlikOpComputer()
             case 4:
                 canvas.beginPath();
                 canvas.arc(70,70,10,0,2*Math.PI); //links boven 1e dobbelsteen
+                canvas.moveTo(70,130);
                 canvas.arc(70,130,10,0,2*Math.PI); //link onder 1e dobbelsteen
+                canvas.moveTo(130,70);
                 canvas.arc(130,70,10,0,2*Math.PI); //rechts boven 1e dobbelsteen
+                canvas.moveTo(130,130);
                 canvas.arc(130,130,10,0,2*Math.PI); //rechts onder 1e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -198,9 +203,13 @@ function reageerKlikOpComputer()
             case 5:
                 canvas.beginPath();
                 canvas.arc(70,70,10,0,2*Math.PI); //links boven 1e dobbelsteen
+                canvas.moveTo(70,130);
                 canvas.arc(70,130,10,0,2*Math.PI); //link onder 1e dobbelsteen
+                canvas.moveTo(100,100);
                 canvas.arc(100,100,10,0,2*Math.PI); //middelste stip 1e dobbelsteen
+                canvas.moveTo(130,70);
                 canvas.arc(130,70,10,0,2*Math.PI); //rechts boven 1e dobbelsteen
+                canvas.moveTo(130,130);
                 canvas.arc(130,130,10,0,2*Math.PI); //rechts onder 1e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -209,10 +218,15 @@ function reageerKlikOpComputer()
             case 6:
                 canvas.beginPath();
                 canvas.arc(70,70,10,0,2*Math.PI); //links boven 1e dobbelsteen
+                canvas.moveTo(70,100);
                 canvas.arc(70,100,10,0,2*Math.PI); //links midden 1e dobbelsteen
+                canvas.moveTo(70,130);
                 canvas.arc(70,130,10,0,2*Math.PI); //link onder 1e dobbelsteen
+                canvas.moveTo(130,70);
                 canvas.arc(130,70,10,0,2*Math.PI); //rechts boven 1e dobbelsteen
+                canvas.moveTo(130,100);
                 canvas.arc(130,100,10,0,2*Math.PI); //rechts midden 1e dobbelsteen
+                canvas.moveTo(130,130);
                 canvas.arc(130,130,10,0,2*Math.PI); //rechts onder 1e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -230,7 +244,7 @@ function reageerKlikOpComputer()
             case 2:
                 canvas.beginPath();
                 canvas.arc(220,70,10,0,2*Math.PI); //links boven 2e dobbelsteen
-
+                canvas.moveTo(280,130);
                 canvas.arc(280,130,10,0,2*Math.PI); //rechts onder 2e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -239,9 +253,9 @@ function reageerKlikOpComputer()
             case 3:
                 canvas.beginPath();
                 canvas.arc(220,70,10,0,2*Math.PI); //links boven 2e dobbelsteen
-
+                canvas.moveTo(250,100);
                 canvas.arc(250,100,10,0,2*Math.PI); //middelste stip 2e dobbelsteen
-
+                canvas.moveTo(280,130);
                 canvas.arc(280,130,10,0,2*Math.PI); //rechts onder 2e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -250,8 +264,11 @@ function reageerKlikOpComputer()
             case 4:
                 canvas.beginPath();
                 canvas.arc(220,70,10,0,2*Math.PI); //links boven 2e dobbelsteen
+                canvas.moveTo(220,70);
                 canvas.arc(220,130,10,0,2*Math.PI); //links onder 2e dobbelsteen
+                canvas.moveTo(280,70);
                 canvas.arc(280,70,10,0,2*Math.PI); //rechts boven 2e dobbelsteen
+                canvas.moveTo(280,130);
                 canvas.arc(280,130,10,0,2*Math.PI); //rechts onder 2e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -260,9 +277,13 @@ function reageerKlikOpComputer()
             case 5:
                 canvas.beginPath();
                 canvas.arc(220,70,10,0,2*Math.PI); //links boven 2e dobbelsteen
+                canvas.moveTo(220,130);
                 canvas.arc(220,130,10,0,2*Math.PI); //links onder 2e dobbelsteen
+                canvas.moveTo(250,100);
                 canvas.arc(250,100,10,0,2*Math.PI); //middelste stip 2e dobbelsteen
+                canvas.moveTo(280,70);
                 canvas.arc(280,70,10,0,2*Math.PI); //rechts boven 2e dobbelsteen
+                canvas.moveTo(280,130);
                 canvas.arc(280,130,10,0,2*Math.PI); //rechts onder 2e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -271,10 +292,15 @@ function reageerKlikOpComputer()
             case 6:
                 canvas.beginPath();
                 canvas.arc(220,70,10,0,2*Math.PI); //links boven 2e dobbelsteen
+                canvas.moveTo(220,100);
                 canvas.arc(220,100,10,0,2*Math.PI); //links midden 2e dobbelsteen
+                canvas.moveTo(220,130);
                 canvas.arc(220,130,10,0,2*Math.PI); //links onder 2e dobbelsteen
+                canvas.moveTo(280,70);
                 canvas.arc(280,70,10,0,2*Math.PI); //rechts boven 2e dobbelsteen
+                canvas.moveTo(280,100);
                 canvas.arc(280,100,10,0,2*Math.PI); //rechts midden 2e dobbelsteen
+                canvas.moveTo(280,130);
                 canvas.arc(280,130,10,0,2*Math.PI); //rechts onder 2e dobbelsteen
                 canvas.closePath();
                 canvas.fill();
@@ -295,8 +321,8 @@ function reageerKlikOpSpeler()
         if(inzet > 0)
         {
             beurt = "computer";
-            var randomGetal1 = 3;//Math.floor(Math.random()*6)+1;
-            var randomGetal2 = 3;//Math.floor(Math.random()*6)+1;
+            var randomGetal1 = Math.floor(Math.random()*6)+1;
+            var randomGetal2 = Math.floor(Math.random()*6)+1;
 
             spelerTotaal= randomGetal1+randomGetal2;
             tekenScoreSpeler();
@@ -304,77 +330,147 @@ function reageerKlikOpSpeler()
             {
                 case 1:
                     canvas.beginPath();
-                    canvas.arc(550,100,10,0,2*Math.PI);
+                    canvas.arc(550,100,10,0,2*Math.PI); //middelste stip 3e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 2:
                     canvas.beginPath();
-                    canvas.arc(520,70,10,0,2*Math.PI);
-
-                    canvas.arc(580,130,10,0,2*Math.PI);
+                    canvas.arc(520,70,10,0,2*Math.PI); //links boven 3e dobbelsteen
+                    canvas.moveTo(580,130);
+                    canvas.arc(580,130,10,0,2*Math.PI); //rechts onder 3e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 3:
                     canvas.beginPath();
-                    canvas.arc(520,70,10,0,2*Math.PI);
-                    canvas.arc(550,100,10,0,2*Math.PI);
-                    canvas.arc(580,130,10,0,2*Math.PI);
+                    canvas.arc(520,70,10,0,2*Math.PI); //links boven 3e dobbelsteen
+                    canvas.moveTo(550,100);
+                    canvas.arc(550,100,10,0,2*Math.PI); //middelste stip 3e dobbelsteen
+                    canvas.moveTo(580,130);
+                    canvas.arc(580,130,10,0,2*Math.PI); //rechts onder 3e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 4:
-
+                    canvas.beginPath();
+                    canvas.arc(520,70,10,0,2*Math.PI); //links boven 3e dobbelsteen
+                    canvas.moveTo(520,70);
+                    canvas.arc(520,130,10,0,2*Math.PI); //links onder 3e dobbelsteen
+                    canvas.moveTo(580,70);
+                    canvas.arc(580,70,10,0,2*Math.PI); //rechts boven 3e dobbelsteen
+                    canvas.moveTo(580,130);
+                    canvas.arc(580,130,10,0,2*Math.PI); //rechts onder 3e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break;
 
                 case 5:
-
+                    canvas.beginPath();
+                    canvas.arc(520,70,10,0,2*Math.PI); //links boven 3e dobbelsteen
+                    canvas.moveTo(520,70);
+                    canvas.arc(520,130,10,0,2*Math.PI); //links onder 3e dobbelsteen
+                    canvas.moveTo(550,100);
+                    canvas.arc(550,100,10,0,2*Math.PI); //middelste stip 3e dobbelsteen
+                    canvas.moveTo(580,70);
+                    canvas.arc(580,70,10,0,2*Math.PI); //rechts boven 3e dobbelsteen
+                    canvas.moveTo(580,130);
+                    canvas.arc(580,130,10,0,2*Math.PI); //rechts onder 3e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break;
 
                 case 6:
-
+                    canvas.beginPath();
+                    canvas.arc(520,70,10,0,2*Math.PI); //links boven 3e dobbelsteen
+                    canvas.moveTo(520,100);
+                    canvas.arc(520,100,10,0,2*Math.PI); //links midden 3e dobbelsteen
+                    canvas.moveTo(520,130);
+                    canvas.arc(520,130,10,0,2*Math.PI); //links onder 3e dobbelsteen
+                    canvas.moveTo(580,70);
+                    canvas.arc(580,70,10,0,2*Math.PI); //rechts boven 3e dobbelsteen
+                    canvas.moveTo(580,100);
+                    canvas.arc(580,100,10,0,2*Math.PI); //rechts midden 3e dobbelsteen
+                    canvas.moveTo(580,130);
+                    canvas.arc(580,130,10,0,2*Math.PI); //rechts onder 3e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break; 
             }
             switch(randomGetal2)
             {
                 case 1:
                     canvas.beginPath();
-                    canvas.arc(700,100,10,0,2*Math.PI);
+                    canvas.arc(700,100,10,0,2*Math.PI); //middelste stip 4e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 2:
                     canvas.beginPath();
-                    canvas.arc(670,70,10,0,2*Math.PI);
-                    canvas.arc(730,130,10,0,2*Math.PI);
+                    canvas.arc(670,70,10,0,2*Math.PI); //links boven 4e dobbelsteen
+                    canvas.arc(730,130,10,0,2*Math.PI); //rechts onder 4e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 3:
                     canvas.beginPath();
-                    canvas.arc(670,70,10,0,2*Math.PI);
-                    canvas.arc(700,100,10,0,2*Math.PI);
-                    canvas.arc(730,130,10,0,2*Math.PI);
+                    canvas.arc(670,70,10,0,2*Math.PI); //links boven 4e dobbelsteen
+                    canvas.moveTo(700,100);
+                    canvas.arc(700,100,10,0,2*Math.PI); //middelste stip 4e dobbelsteen
+                    canvas.moveTo(730,130);
+                    canvas.arc(730,130,10,0,2*Math.PI); //rechts onder 4e dobbelsteen
                     canvas.closePath();
                     canvas.fill();
                     break;
 
                 case 4:
-
+                    canvas.beginPath();
+                    canvas.arc(670,70,10,0,2*Math.PI); //links boven 4e dobbelsteen
+                    canvas.moveTo(520,70);
+                    canvas.arc(670,130,10,0,2*Math.PI); //links onder 4e dobbelsteen
+                    canvas.moveTo(730,70);
+                    canvas.arc(730,70,10,0,2*Math.PI); //rechts boven 4e dobbelsteen
+                    canvas.moveTo(730,130);
+                    canvas.arc(730,130,10,0,2*Math.PI); //rechts onder 4e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break;
 
                 case 5:
-
+                    canvas.beginPath();
+                    canvas.arc(670,70,10,0,2*Math.PI); //links boven 4e dobbelsteen
+                    canvas.moveTo(520,70);
+                    canvas.arc(670,130,10,0,2*Math.PI); //links onder 4e dobbelsteen
+                    canvas.moveTo(700,100);
+                    canvas.arc(700,100,10,0,2*Math.PI); //middelste stip 4e dobbelsteen
+                    canvas.moveTo(730,70);
+                    canvas.arc(730,70,10,0,2*Math.PI); //rechts boven 4e dobbelsteen
+                    canvas.moveTo(730,130);
+                    canvas.arc(730,130,10,0,2*Math.PI); //rechts onder 4e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break;
 
                 case 6:
-
+                    canvas.beginPath();
+                    canvas.arc(670,70,10,0,2*Math.PI); //links boven 4e dobbelsteen
+                    canvas.moveTo(520,70);
+                    canvas.arc(670,130,10,0,2*Math.PI); //links onder 4e dobbelsteen
+                    canvas.moveTo(670,100);
+                    canvas.arc(670,100,10,0,2*Math.PI); //links midden 3e dobbelsteen
+                    canvas.moveTo(730,70);
+                    canvas.arc(730,70,10,0,2*Math.PI); //rechts boven 4e dobbelsteen
+                    canvas.moveTo(730,100);
+                    canvas.arc(730,100,10,0,2*Math.PI); //rechts midden 3e dobbelsteen
+                    canvas.moveTo(730,130);
+                    canvas.arc(730,130,10,0,2*Math.PI); //rechts onder 4e dobbelsteen
+                    canvas.closePath();
+                    canvas.fill();
                     break; 
             }
             
@@ -431,52 +527,6 @@ function reageerKlikOpSpeler()
         tekenMelding();
     }
 }
-
-function clearDobbelsteen()
-{
-    switch(i)
-    {
-        case 0:
-            canvas.fillStyle= "green";
-            break;
-        case 1:
-            canvas.fillStyle= "blue";
-            break;
-        case 2:
-            canvas.fillStyle= "red";
-            break;
-    }
-    console.log(i);
-    i++;
-    
-    if(i === 3)
-    {
-        i=0;
-    }
-    /*****************/
-    /* Eerste dobbel */
-    /*    Computer   */
-    /*****************/
-    canvas.clearRect(53,53,94,94);
-    
-    /*****************/
-    /* tweede dobbel */
-    /*    Computer   */
-    /*****************/
-    canvas.clearRect(203,53,94,94);
-    
-    /*****************/
-    /* Eerste dobbel */
-    /*     Speler    */
-    /*****************/
-    canvas.clearRect(503,53,94,94);
-    
-    /*****************/
-    /* Tweede dobbel */
-    /*     Speler    */
-    /*****************/
-    canvas.clearRect(653,53,94,94);
-}
 function reageerOpInzetVerhogen()
 {
     if(saldo>=100)
@@ -532,39 +582,3 @@ function reageerKlikOpLager()
 {
     verwachting = "lager";
 }
-/*function reageerOpButtonKlik(cButton)
-{
-    var geklikteButton = krijgGeklikteButton(cButton);
-    if(geklikteButton === 0)
-    {
-        window.alert('Geklikt op: Computer Gooien');
-    }
-    else
-    {
-        window.alert('Geklikt op: Speler Gooien');
-    }
-}
-
-function krijgGeklikteButton(id)
-{
-    for(var i=0;i<button.length;i++)
-    {
-        if(id === button[i])
-        {
-            return i;
-        }
-    }
-}*/
-
-/*function anim(dob)
-{
-    var aantal = Math.floor(Math.random()*6)+1;
-    tekenogen(dob,'1'aantal);
-}
-
-function refresh()
-{
-    canvas.clearRect(0,0,800,400);
-    drawDobbelstenen();
-}*/
-
