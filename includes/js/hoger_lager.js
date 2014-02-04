@@ -107,8 +107,6 @@ function tekenSpeelveld()
     
     tekenInzet();
     tekenSaldo();
-    
-    tekenScoreComputer();
 }
 
 function tekenScoreComputer()
