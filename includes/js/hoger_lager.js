@@ -1,7 +1,5 @@
 window.onload=execute;
 
-/*Hou van je, Pleh*/
-
 /******************************/
 /* Definier canvas            */
 /******************************/
