@@ -107,8 +107,36 @@ function tekenSpeelveld()
     
     tekenInzet();
     tekenSaldo();
+    
+    tekenScoreComputer();
 }
 
+function tekenScoreComputer()
+{
+    canvas.clearRect(90,154,20,30);
+    canvas.fillStyle = "black";
+    canvas.font = "30px Arial"
+    if(computerTotaal > 0)
+    {
+        canvas.fillText(computerTotaal,90,180);
+    }
+}
+
+function tekenScoreSpeler()
+{
+    canvas.clearRect(710,154,20,30);
+    canvas.fillStyle = "black";
+    canvas.font = "30px Arial"
+    if(spelerTotaal > 0)
+    {
+        canvas.fillText(spelerTotaal,710,180);
+    }
+}
+
+function leegScoreSpeler()
+{
+    canvas.clearRect(710,154,20,30);
+}
 function tekenMelding()
 {
     canvas.clearRect(200,154,450,60);
@@ -129,7 +157,8 @@ function reageerKlikOpComputer()
         var randomGetal2 = Math.floor(Math.random()*6)+1;
 
         computerTotaal= randomGetal1+randomGetal2;
-
+        tekenScoreComputer();
+        leegScoreSpeler();
         switch(randomGetal1)
         {
             case 1:
@@ -271,8 +300,8 @@ function reageerKlikOpSpeler()
             var randomGetal1 = 3;//Math.floor(Math.random()*6)+1;
             var randomGetal2 = 3;//Math.floor(Math.random()*6)+1;
 
-            spelerTotaalTotaal= randomGetal1+randomGetal2;
-
+            spelerTotaal= randomGetal1+randomGetal2;
+            tekenScoreSpeler();
             switch(randomGetal1)
             {
                 case 1:
@@ -349,6 +378,47 @@ function reageerKlikOpSpeler()
                 case 6:
 
                     break; 
+            }
+            
+            if(verwachting === "hoger")
+            {
+                if(computerTotaal < spelerTotaal)
+                {
+                    melding = "Gefeliciteerd goed geraden";
+                    tekenMelding();
+                    
+                    saldo = saldo+(inzet*2);
+                    inzet = 0;
+                    tekenInzet();
+                    tekenSaldo();
+                }
+                else
+                {
+                    melding = "Jammer probeer het nog eens";
+                    tekenMelding();
+                    inzet=0;
+                    tekenInzet();
+                }
+            }
+            else
+            {
+                if(computerTotaal > spelerTotaal)
+                {
+                 melding = "Gefeliciteerd goed geraden";
+                    tekenMelding();
+                    
+                    saldo = saldo+(inzet*2);
+                    inzet = 0;
+                    tekenInzet();
+                    tekenSaldo();
+                }
+                else
+                {
+                    melding = "Jammer probeer het nog eens";
+                    tekenMelding();
+                    inzet=0;
+                    tekenInzet();
+                }
             }
         }
         else
