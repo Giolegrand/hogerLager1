@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoger Lager Voorbeeld</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel='stylesheet' type='text/css' href="includes\css\HogerLager.css">
+        <script src="includes\js\hoger_lager.js" language="javascript"></script>
+    </head>
+    <body>
+        <div id='background'>
+            <header>
+                <span>
+                    Hoger Lager Deluxe
+                </span>
+            </header>
+            <div id='container'>
+                <canvas width='800' height='400'></canvas>
+                
+                <div id='controls'>
+                    <div><button onclick="reageerKlikOpComputer()">Computer gooien</button></div>
+                    <div><input type='radio' name='keuze' onclick="reageerKlikOpHoger()" checked>Hoger</div>
+                    <div>
+                        <table>
+                            <caption>Inzet</caption>
+                            <tr>
+                                <td><img class="inzet" src='images\pijlOmhoog.png' onclick="reageerOpInzetVerhogen()"/></td>
+                                <td><span class="inzet" id="allIn" onclick="reageerOpInzetAllIn()"/>All-In</span></td>
+                                <td><img class="inzet" onclick="reageerOpInzetVerlagen()" src='images\pijlBeneden.png'/></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>Lager<input type='radio' name='keuze' onclick="reageerKlikOpLager()"></div>
+                    <div><button onclick="reageerKlikOpSpeler()">Speler gooien</button></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
